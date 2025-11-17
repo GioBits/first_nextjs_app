@@ -1,5 +1,7 @@
+import Navbar from "@/components/navigation/navbar";
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import ThemeProvider from "./context/Theme";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,8 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
