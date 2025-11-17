@@ -1,9 +1,11 @@
 const Home = () => {
   return (
     <div>
-      <h1 className='text-3xl font-bold text-violet-700'>Welcome to the Home Page</h1>
+      <h1 className="h1-bold">Welcome to the Home Page</h1>
+      <h1 className="h1-bold font-inter">Welcome to the Home Page (Inter)</h1>
+      <h1 className="h1-bold font-space-grotesk">Welcome to the Home Page (Space Grotesk)</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
